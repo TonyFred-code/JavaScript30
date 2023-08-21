@@ -63,7 +63,11 @@
         if (!audio) return;
         audio.currentTime = 0;
         audio.play();
-        key.classList.add("playing");
+        if (key.classList.contains("playing")) {
+          key.classList.remove("playing")
+        } else {
+          key.classList.add("playing")
+        }
       }
 
       function removeTransition(e) {
